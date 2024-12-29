@@ -1,33 +1,12 @@
 package com.lpacademy;
 
 import java.util.Scanner;
+import java.util.concurrent.Flow;
 
 public class Challenges {
-    public static void main(String[] args) {
 
-        //region S06 - Day of the Week Coding Challenge
-        //printDayOfWeek(5);
-        //printDayOfWeek('a');
-        //endregion
-
-        //region S06 - Reading User Input Coding Challenge
-        //sumUserNumbers();
-        //endregion
-
-        //region S06 - Min & Max Coding Challenge
-        //minMax();
-        //endregion
-
-
-    }
-
-    //* ═════════════════════════════════════════════════════════════════════
-
-    //*     ╭──────────────────────────────────────────────────────────╮
-    //*     │               Section 06 - Control Flow                  │
-    //*     ╰──────────────────────────────────────────────────────────╯
-
-    //* ═════════════════════════════════════════════════════════════════════
+    //* ─────────────────────────────────────────────────────────────────────────────
+    //* ───────────────────────── Section 06 - Control Flow ─────────────────────────
 
     //region S06 - Day of the Week Coding Challenge
     public static void printDayOfWeek(int number){
@@ -96,4 +75,8 @@ public class Challenges {
         System.out.println("min = " + min + ", max = " + max);
     }
     //endregion
+
+    //* ─────────────────── Section 07 - Oop Part 1 - Inheritance ───────────────────
+    //* ─────────────────────────────────────────────────────────────────────────────
+
 }

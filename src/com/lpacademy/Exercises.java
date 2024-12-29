@@ -1,11 +1,9 @@
 package com.lpacademy;
 
+import java.awt.Rectangle;
 import java.util.Scanner;
 
 public class Exercises {
-    public static void main(String[] args) {
-
-    }
 
     //* ═════════════════════════════════════════════════════════════════════
 
@@ -502,6 +500,387 @@ public class Exercises {
         }
         return (int) Math.ceil(area / areaPerBucket);
     }
+    //endregion
+
+    //* ═════════════════════════════════════════════════════════════════════
+
+    //*     ╭──────────────────────────────────────────────────────────╮
+    //*     │           Section 07 - OOP Part 1 - Inheritance          │
+    //*     ╰──────────────────────────────────────────────────────────╯
+
+    //* ═════════════════════════════════════════════════════════════════════
+
+    //region S07 - Coding Exercise 30: Sum Calculator
+    public class SimpleCalculator {
+        // write code here
+        private double firstNumber;
+        private double secondNumber;
+
+        public double getFirstNumber(){
+            return this.firstNumber;
+        }
+
+        public double getSecondNumber(){
+            return this.secondNumber;
+        }
+
+        public void setFirstNumber(double number){
+            this.firstNumber = number;
+        }
+
+        public void setSecondNumber(double number){
+            this.secondNumber = number;
+        }
+
+        public double getAdditionResult(){
+            return firstNumber + secondNumber;
+        }
+
+        public double getSubtractionResult(){
+            return firstNumber - secondNumber;
+        }
+
+        public double getMultiplicationResult(){
+            return firstNumber * secondNumber;
+        }
+
+        public double getDivisionResult(){
+            if (secondNumber == 0) {
+                return 0;
+            } else {
+                return firstNumber / secondNumber;
+            }
+        }
+    }
+    //endregion
+
+    //region S07 - Coding Exercise 31: Person
+    public class Person {
+        // write code here
+        private String firstName;
+        private String lastName;
+        private int age;
+
+        public String getFirstName(){
+            return this.firstName;
+        }
+
+        public String getLastName(){
+            return this.lastName;
+        }
+
+        public int getAge(){
+            return this.age;
+        }
+
+        public void setFirstName(String firstName){
+            this.firstName = firstName;
+        }
+
+        public void setLastName(String lastName){
+            this.lastName = lastName;
+        }
+
+        public void setAge(int age){
+            if (age < 0 || age > 100){
+                this.age = 0;
+            } else {
+                this.age = age;
+            }
+        }
+
+        public boolean isTeen(){
+            return age > 12 && age < 20;
+        }
+
+        public String getFullName(){
+            if (firstName.isEmpty() && lastName.isEmpty()){
+                return "";
+            } else if (lastName.isEmpty()){
+                return firstName;
+            } else if (firstName.isEmpty()){
+                return lastName;
+            } else {
+                return firstName + " " + lastName;
+            }
+        }
+    }
+    //endregion
+
+    //region S07 - Coding Exercise 32: Wall Area
+    /*public class Wall {
+        // write code here
+        private double width;
+        private double height;
+
+        public Wall(){
+
+        }
+
+        public Wall(double width, double height){
+            if (width < 0){
+                this.width = 0;
+            } else {
+                this.width = width;
+            }
+
+            if (height < 0){
+                this.height = 0;
+            } else {
+                this.height = height;
+            }
+        }
+
+        public double getWidth(){
+            return width;
+        }
+
+        public double getHeight(){
+            return height;
+        }
+
+        public void setWidth(double width){
+            if (width < 0){
+                this.width = 0;
+            } else {
+                this.width = width;
+            }
+        }
+
+        public void setHeight(double height){
+            if (height < 0){
+                this.height = 0;
+            } else {
+                this.height = height;
+            }
+        }
+
+        public double getArea(){
+            return height * width;
+        }
+    }*/
+    //endregion
+
+    //region S07 - Coding Exercise 33: Point
+    /*public class Point {
+        // write code here
+        private int x;
+        private int y;
+
+        public Point(){
+
+        }
+
+        public Point(int x, int y){
+            this.x = x;
+            this.y = y;
+        }
+
+        public int getX(){
+            return x;
+        }
+        public int getY(){
+            return y;
+        }
+        public void setX(int x){
+            this.x = x;
+        }
+        public void setY(int y){
+            this.y = y;
+        }
+        public double distance(){
+            return distance(0,0);
+        }
+        public double distance(Point p){
+            return distance(p.getX(), p.getY());
+        }
+        public double distance(int x, int y){
+            return Math.sqrt(Math.pow((this.x - x), 2) + Math.pow((this.y - y), 2));
+        }
+    }*/
+    //endregion
+
+    //region S07 - Coding Exercise 34: Carpet Cost Calculator
+    /*public class Floor {
+        // write code here
+        private double width;
+        private double length;
+
+        public Floor(double width, double length){
+            if (width < 0){
+                this.width = 0;
+            } else {
+                this.width = width;
+            }
+
+            if (length < 0){
+                this.length = 0;
+            } else {
+                this.length = length;
+            }
+        }
+
+        public double getArea(){
+            return width * length;
+        }
+    }
+    public class Carpet {
+        // write code here
+        private double cost;
+
+        public Carpet(double cost){
+            if (cost < 0){
+                this.cost = 0;
+            } else {
+                this.cost = cost;
+            }
+        }
+        public double getCost(){
+            return cost;
+        }
+
+
+    }
+    public class Calculator {
+        // write code here
+        private Floor floor;
+        private Carpet carpet;
+
+        public Calculator(Floor floor, Carpet carpet){
+            this.floor = floor;
+            this.carpet = carpet;
+        }
+
+        public double getTotalCost(){
+            return floor.getArea() * carpet.getCost();
+        }
+    }*/
+    //endregion
+
+    //region S07 - Coding Exercise 35:Complex Operations
+    /*public class ComplexNumber {
+        // write code here
+        private double real;
+        private double imaginary;
+
+        public ComplexNumber(double real, double imaginary){
+            this.real = real;
+            this.imaginary = imaginary;
+        }
+
+        public double getReal(){
+            return real;
+        }
+        public double getImaginary(){
+            return imaginary;
+        }
+
+        public void add(double real, double imaginary){
+            this.real += real;
+            this.imaginary += imaginary;
+        }
+
+        public void add(ComplexNumber number){
+            add(number.getReal(), number.getImaginary());
+        }
+
+        public void subtract (double real, double imaginary){
+            this.real -= real;
+            this.imaginary -= imaginary;
+        }
+
+        public void subtract (ComplexNumber number){
+            subtract (number.getReal(), number.getImaginary());
+        }
+    }*/
+    //endregion
+
+    //region S07 - Coding Exercise 36: Cylinder
+    /*public class Circle {
+        // write code here
+        private double radius;
+
+        public Circle (double radius) {
+            if (radius <= 0) {
+                this.radius = 0;
+            } else {
+                this.radius = radius;
+            }
+        }
+
+        public double getRadius(){
+            return radius;
+        }
+
+        public double getArea(){
+            return Math.PI * Math.pow(radius,2);
+        }
+    }*/
+    /*public class Cylinder extends Circle{
+        // write code here
+        private double height;
+
+        public Cylinder(double radius, double height){
+            super(radius);
+            if (height <= 0){
+                this.height = 0;
+            } else {
+                this.height = height;
+            }
+        }
+
+        public double getHeight(){
+            return height;
+        }
+
+        public double getVolume(){
+            return height * super.getArea();
+        }
+
+
+    }*/
+    //endregion
+
+    //region S07 - Coding Exercise 37: Pool Area
+    /*public class Rectangle {
+        // write code here
+        private double width;
+        private double length;
+
+        public Rectangle(double width, double length){
+            this.width = (width >= 0) ? width : 0;
+            this.length = (length >= 0) ? length : 0;
+        }
+
+        public double getWidth(){
+            return width;
+        }
+
+        public double getLength(){
+            return length;
+        }
+
+        public double getArea(){
+            return width * length;
+        }
+    }*/
+    /*public class Cuboid extends Rectangle {
+        // write code here
+        private double height;
+
+        public Cuboid(double width, double length, double height){
+            super(width, length);
+            this.height = (height > 0) ? height : 0;
+        }
+
+        public double getHeight(){
+            return height;
+        }
+
+        public double getVolume(){
+            return height * super.getArea();
+        }
+    }*/
     //endregion
 
     //S07 - Coding Exercise

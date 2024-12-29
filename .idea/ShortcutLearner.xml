@@ -3,10 +3,10 @@
   <component name="ShortcutStateService">
     <option name="shortcutCounts">
       <map>
-        <entry key="CLOSE" value="1" />
-        <entry key="COMMENT" value="1" />
-        <entry key="DUPLICATE" value="5" />
-        <entry key="RENAME" value="2" />
+        <entry key="CLOSE" value="18" />
+        <entry key="COMMENT" value="5" />
+        <entry key="DUPLICATE" value="20" />
+        <entry key="RENAME" value="4" />
       </map>
     </option>
   </component>
