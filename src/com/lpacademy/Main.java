@@ -1,16 +1,20 @@
 package com.lpacademy;
 
 import com.lpacademy.oop.BankAccount;
+import com.lpacademy.oop.BillsBurger.*;
+import com.lpacademy.oop.CompositionChallenge.SmartKitchen;
 import com.lpacademy.oop.Customer;
 import com.lpacademy.oop.InheritanceChallenge.Employee;
 import com.lpacademy.oop.InheritanceChallenge.HourlyEmployee;
 import com.lpacademy.oop.InheritanceChallenge.SalariedEmployee;
+import com.lpacademy.oop.Polymorphism.*;
+import com.lpacademy.oop.Printer;
 import com.lpacademy.oop.Student;
 
 import java.time.Year;
 
-import static com.lpacademy.Challenges.*;
-import static com.lpacademy.Exercises.*;
+import com.lpacademy.Challenges.*;
+import com.lpacademy.Exercises.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -106,8 +110,58 @@ public class Main {
         System.out.println("Jane's Holiday pay = $" + jane.getDoublePay());*/
         //endregion
 
-        
         //endregion
+
+        //region S08 - Composition Challenge
+        /*SmartKitchen kitchen = new SmartKitchen();
+        kitchen.setKitchenState(true, false, true);
+        kitchen.doKitchenWork();*/
+        //endregion
+
+        //region S08 - Encapsulation Challenge
+        /*Printer printer = new Printer(50, true);
+        System.out.println("Initial page count : " + printer.getPaperPrinted());
+
+        int pagesPrinted = printer.printPages(5);
+        System.out.printf("Current Job Pages: %d, Printer Total: %d %n",
+                pagesPrinted, printer.getPaperPrinted());
+
+        pagesPrinted = printer.printPages(10);
+        System.out.printf("Current Job Pages: %d, Printer Total: %d %n",
+                pagesPrinted, printer.getPaperPrinted());*/
+        //endregion
+
+        //region S08 - Polymorphism Challenge
+        /*GasPoweredCar car = new GasPoweredCar("2022 Blue Ferrari 296 GTS");
+        car.startEngine();
+        car.drive();
+        car.runEngine();*/
+        /*Car tesla = new ElectricCar("2022 Red Tesla Model 3", 568, 75);
+        tesla.startEngine();
+        tesla.runEngine();
+        tesla.drive();*/
+        //endregion
+
+        /*MealOrder meal_1 = new MealOrder();
+        System.out.println(meal_1);*/
+
+
+
+        /*Drink drink = new Drink();
+        drink.setSize("Medium");
+        drink.printItem();*/
+        /*Side side = new Side("Fries");
+        side.printItem();*/
+        /*Burger burger = new Burger("bacon");
+        burger.addToppings("BACON", "CHEESE", "MAYO");
+        burger.printItem();*/
+        MealOrder order = new MealOrder();
+        order.addBurgerToppings("BACON", "CHEESE", "MAYO");
+        order.setDrinkSize("LARGE");
+        order.printItemizedList();
 
     }
 }
+
+/*System.out.printf("%20s%n", getClass().getSimpleName());
+        System.out.println("-".repeat(30));*/

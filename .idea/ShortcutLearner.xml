@@ -3,10 +3,12 @@
   <component name="ShortcutStateService">
     <option name="shortcutCounts">
       <map>
-        <entry key="CLOSE" value="18" />
-        <entry key="COMMENT" value="5" />
-        <entry key="DUPLICATE" value="20" />
-        <entry key="RENAME" value="4" />
+        <entry key="CLOSE" value="144" />
+        <entry key="COMMENT" value="22" />
+        <entry key="DUPLICATE" value="50" />
+        <entry key="FORMAT" value="1" />
+        <entry key="NAVIGATE_RECENT_FILE" value="1" />
+        <entry key="RENAME" value="6" />
       </map>
     </option>
   </component>
