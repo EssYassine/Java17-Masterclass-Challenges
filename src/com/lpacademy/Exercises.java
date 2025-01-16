@@ -1,6 +1,9 @@
 package com.lpacademy;
 
 import java.awt.Rectangle;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Exercises {
@@ -1162,6 +1165,414 @@ public class Exercises {
     }*/
     //endregion
 
-    //S07 - Coding Exercise
+    //* ═════════════════════════════════════════════════════════════════════
+
+    //*     ╭──────────────────────────────────────────────────────────╮
+    //*     │                    Section 09 - Array                    │
+    //*     ╰──────────────────────────────────────────────────────────╯
+
+    //* ═════════════════════════════════════════════════════════════════════
+
+    //region S09 - Coding Exercise 41: Sorted Array
+    /*import java.util.Scanner;
+    import java.util.Arrays;
+
+    public class SortedArray {
+        // write code here
+
+        public static int[] getIntegers(int length) {
+
+            Scanner scanner = new Scanner(System.in);
+            int[] integers = new int[length];
+
+            for (int i = 0; i < length; i++){
+                System.out.print("Enter a number: ");
+                integers[i] = scanner.nextInt();
+            }
+
+            return integers;
+
+        }
+
+        public static void printArray(int[] array) {
+            for (int i = 0; i < array.length; i++){
+                System.out.printf("Element %d contents %d", i, array[i]);
+            }
+        }
+
+        public static int[] sortIntegers(int[] array) {
+            Arrays.sort(array);
+            for (int i = 0; i < (array.length) / 2; i++){
+                int temp = array[i];
+                array[i] = array[array.length - 1 - i];
+                array[array.length - 1 - i] = temp;
+            }
+            return array;
+        }
+    }*/
+    //endregion
+
+    //region S09 - Coding Exercise 42: Minimum Element
+    /*import java.util.Scanner;
+    import java.util.Arrays;
+
+    public class MinimumElement {
+        // write code here
+        private static int readInteger() {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter a number: ");
+            return scanner.nextInt();
+        }
+
+        private static int[] readElements(int length) {
+            Scanner scanner = new Scanner(System.in);
+            int[] integers = new int[length];
+            for (int i = 0; i < length; i++) {
+                System.out.println("Enter a number: ");
+                integers[i] = scanner.nextInt();
+            }
+            return integers;
+        }
+
+        private static int findMin(int[] integers) {
+            int[] integersCopy = integers.clone();
+            Arrays.sort(integersCopy);
+            return integersCopy[0];
+        }
+    }*/
+    //endregion
+
+    //region S09 - Coding Exercise 43: Reverse Array
+    /*import java.util.Arrays;
+    public class ReverseArray {
+        // write code here
+
+        private static void reverse(int[] integers) {
+            System.out.println("Array = " + Arrays.toString(integers));
+            for (int i = 0; i < integers.length / 2; i++){
+                int temp = integers[i];
+                integers[i] = integers[integers.length - 1 - i];
+                integers[integers.length - 1 - i] = temp;
+            }
+            System.out.println("Reversed array = " + Arrays.toString(integers));
+        }
+    }*/
+    //endregion
+
+    //* ═════════════════════════════════════════════════════════════════════
+
+    //*     ╭──────────────────────────────────────────────────────────╮
+    //*     │              Section 10 - List, ArrayList, ...           │
+    //*     ╰──────────────────────────────────────────────────────────╯
+
+    //* ═════════════════════════════════════════════════════════════════════
+
+    //region S10 - Coding Exercise 44: Mobile Phone
+    /*public class Contact {
+        // write code here
+        private String name;
+        private String phoneNumber;
+
+        public Contact(String name, String phoneNumber) {
+            this.name = name;
+            this.phoneNumber = phoneNumber;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getPhoneNumber() {
+            return phoneNumber;
+        }
+
+        public static Contact createContact(String name, String phoneNumber) {
+            return new Contact(name, phoneNumber);
+        }
+    }
+    import java.util.ArrayList;
+
+    public class MobilePhone {
+        // write code here
+        private String myNumber;
+        private ArrayList<Contact> myContacts;
+
+        public MobilePhone(String phoneNumber) {
+            myNumber = phoneNumber;
+            myContacts = new ArrayList<>();
+        }
+
+        public boolean addNewContact(Contact contact) {
+            if (findContact(contact) == -1) {
+                myContacts.add(contact);
+                return true;
+            }
+            return false;
+        }
+
+        public boolean updateContact(Contact oldContact, Contact newContact) {
+            int index = findContact(oldContact);
+            if (index == -1) {
+                return false;
+            }
+            myContacts.set(index, newContact);
+            return true;
+        }
+
+        public boolean removeContact(Contact contact) {
+            int index = findContact(contact);
+            if (index == -1) {
+                return false;
+            }
+            myContacts.remove(index);
+            return true;
+        }
+
+        //Return the index of the found contact
+        private int findContact(Contact contact) {
+            return  findContact(contact.getName());
+        }
+
+        //Return the index of the found contact
+        private int findContact(String contactName) {
+            for (int i = 0; i < myContacts.size(); i++) {
+                if (myContacts.get(i).getName().equals(contactName)) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public Contact queryContact(String contact) {
+            return (findContact(contact) == -1 ? null : myContacts.get(findContact(contact)));
+        }
+
+        public void printContacts() {
+            System.out.println("Contact List:");
+            for (int i = 0; i < myContacts.size(); i++) {
+                System.out.printf("%d. %s -> %s", i+1, myContacts.get(i).getName(), myContacts.get(i).getPhoneNumber());
+            }
+        }
+    }*/
+    //endregion
+
+    //region S10 - Coding Exercise 45: Playlist
+    /*public class Song {
+        // write code here
+        private String title;
+        private double duration;
+
+        public Song(String title, double duration) {
+            this.title = title;
+            this.duration = duration;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        @Override
+        public String toString(){
+            return title + ": " + duration;
+        }
+    }
+    import java.util.*;
+    public class Album {
+        // write code here
+        private String name;
+        private String artist;
+        private ArrayList<Song> songs;
+
+        public Album(String name, String artist){
+            this.name = name;
+            this.artist = artist;
+            songs = new ArrayList<Song>();
+        }
+
+        public boolean addSong(String title, double duration) {
+            if (findSong(title) == null){
+                songs.add(new Song(title, duration));
+                return true;
+            }
+            return false;
+        }
+
+        private Song findSong(String title){
+            for (Song s : songs) {
+                if (s.getTitle().equals(title)) {
+                    return s;
+                }
+            }
+            return null;
+        }
+
+        public boolean addToPlayList(int trackNumber, LinkedList<Song> playlist) {
+            if (trackNumber >= 1) {
+                playlist.add(songs.get(trackNumber - 1));
+                return true;
+            }
+            return false;
+        }
+
+        public boolean addToPlayList(String title, LinkedList<Song> playlist){
+            Song song = findSong(title);
+            if(song == null){
+                return false;
+            }
+            songs.add(song);
+            return true;
+        }
+    }*/
+    //endregion
+
+    //region S10 - Coding Exercise 46: Banking
+    /*import java.util.ArrayList;
+
+    public class Customer {
+        // write code here
+        private String name;
+        private ArrayList<Double> transactions;
+
+        public Customer(String name, double initialDebit){
+            this.name = name;
+            transactions = new ArrayList<>();
+            addTransaction(initialDebit);
+        }
+
+        public String getName(){
+            return name;
+        }
+
+        public ArrayList<Double> getTransactions(){
+            return transactions;
+        }
+
+        public void addTransaction(double debit){
+            transactions.add(debit);
+        }
+    }
+    import java.util.ArrayList;
+
+    public class Branch {
+        // write code here
+        private String name;
+        private ArrayList<Customer> customers;
+
+        public Branch(String name){
+            this.name = name;
+            customers = new ArrayList<>();
+        }
+
+        public String getName(){
+            return name;
+        }
+
+        public ArrayList<Customer> getCustomers(){
+            return customers;
+        }
+
+        private Customer findCustomer(String customerName){
+            for (Customer c : customers){
+                if (c.getName().equalsIgnoreCase(customerName)){
+                    return c;
+                }
+            }
+            return null;
+        }
+
+        public booleaAn newCustomer(String name, double initialDebit){
+            if (findCustomer(name) == null){
+                customers.add(new Customer(name, initialDebit));
+                return true;
+            }
+            return false;
+        }
+
+        public boolean addCustomerTransaction(String name, double transaction){
+            Customer customer = findCustomer(name);
+            if (findCustomer(name) != null) {
+                customer.addTransaction(transaction);
+                return true;
+            }
+            return false;
+        }
+
+
+    }
+    import java.util.ArrayList;
+
+    public class Bank {
+        // write code here
+        private String name;
+        private ArrayList<Branch> branches;
+
+        public Bank(String name){
+            this.name = name;
+            branches = new ArrayList<Branch>();
+        }
+
+        private Branch findBranch(String name){
+            for (Branch c : branches) {
+                if (c.getName().equalsIgnoreCase(name)) {
+                    return c;
+                }
+            }
+            return null;
+        }
+
+        public boolean addBranch(String branchName) {
+            if (findBranch(branchName) == null) {
+                branches.add(new Branch(branchName));
+                return true;
+            }
+            return false;
+        }
+
+        public boolean addCustomer(String branchName, String customerName, double initialDebit) {
+            Branch branch = findBranch(branchName);
+            if (branch != null) {
+                return branch.newCustomer(customerName, initialDebit);
+            }
+            return false;
+        }
+
+        public boolean addCustomerTransaction(String branchName, String customerName, double transaction) {
+            Branch branch = findBranch(branchName);
+            if (branch != null) {
+                return branch.addCustomerTransaction(customerName, transaction);
+            }
+            return false;
+        }
+
+        public boolean listCustomers(String branchName, boolean printTransactions) {
+            Branch branch = findBranch(branchName);
+            if (branch != null) {
+                System.out.println("Customer details for branch " + branchName);
+                for (int i = 0; i < branch.getCustomers().size(); i++) {
+                    Customer customer = branch.getCustomers().get(i);
+                    System.out.printf("Customer: %s[%d]%n", customer.getName(), i + 1);
+                    if (printTransactions) {
+                        System.out.println("Transactions");
+                        for (int j = 0; j < customer.getTransactions().size(); j++) {
+                            System.out.printf("[%d] Amount %.2f%n", j + 1, customer.getTransactions().get(j));
+                        }
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+    }*/
+    //endregion
+
+    //* ═════════════════════════════════════════════════════════════════════
+
+    //*     ╭──────────────────────────────────────────────────────────╮
+    //*     │              Section 11 - Abstraction in Java            │
+    //*     ╰──────────────────────────────────────────────────────────╯
+
+    //* ═════════════════════════════════════════════════════════════════════
+
+
 
 }

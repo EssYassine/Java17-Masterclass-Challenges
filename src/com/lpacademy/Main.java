@@ -1,20 +1,12 @@
 package com.lpacademy;
 
-import com.lpacademy.oop.BankAccount;
-import com.lpacademy.oop.BillsBurger.*;
-import com.lpacademy.oop.CompositionChallenge.SmartKitchen;
-import com.lpacademy.oop.Customer;
-import com.lpacademy.oop.InheritanceChallenge.Employee;
-import com.lpacademy.oop.InheritanceChallenge.HourlyEmployee;
-import com.lpacademy.oop.InheritanceChallenge.SalariedEmployee;
-import com.lpacademy.oop.Polymorphism.*;
-import com.lpacademy.oop.Printer;
-import com.lpacademy.oop.Student;
+import com.lpacademy.collections.Bank;
+import com.lpacademy.collections.Customer;
+import com.lpacademy.collections.Place;
 
-import java.time.Year;
+import java.util.LinkedList;
 
-import com.lpacademy.Challenges.*;
-import com.lpacademy.Exercises.*;
+import static com.lpacademy.Challenges.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -112,6 +104,7 @@ public class Main {
 
         //endregion
 
+        //region S08 - OOP Part 2
         //region S08 - Composition Challenge
         /*SmartKitchen kitchen = new SmartKitchen();
         kitchen.setKitchenState(true, false, true);
@@ -142,11 +135,7 @@ public class Main {
         tesla.drive();*/
         //endregion
 
-        /*MealOrder meal_1 = new MealOrder();
-        System.out.println(meal_1);*/
-
-
-
+        //region S08 - OOP Master Challenge
         /*Drink drink = new Drink();
         drink.setSize("Medium");
         drink.printItem();*/
@@ -155,13 +144,68 @@ public class Main {
         /*Burger burger = new Burger("bacon");
         burger.addToppings("BACON", "CHEESE", "MAYO");
         burger.printItem();*/
-        MealOrder order = new MealOrder();
+        /*MealOrder order = new MealOrder();
         order.addBurgerToppings("BACON", "CHEESE", "MAYO");
         order.setDrinkSize("LARGE");
-        order.printItemizedList();
+        order.printItemizedList();*/
+        //endregion
+        //endregion
+
+        //region S09 - Arrays Challenge
+        /*int[] integers = randomArray();
+        System.out.println(Arrays.toString(integers));
+        Arrays.sort(integers);
+        System.out.println(Arrays.toString(integers));
+        sortIntegers(integers);
+        System.out.println(Arrays.toString(integers));*/
+        //endregion
+
+        //region s09 - Minimum Element Challenge
+        //System.out.println((Arrays.toString(readIntegers())));
+        /*int[] integers = randomArray();
+        System.out.println(Arrays.toString(integers));
+        System.out.println("The minimum value is: " + findMin(integers));*/
+        //endregion
+
+        //region S09 - Reverse Array Challenge
+        /*int[] integers = randomArray();
+        System.out.println(Arrays.toString(integers));
+        reverse(integers);
+        System.out.println(Arrays.toString(integers));*/
+        //endregion
+
+        //region S10 - ArrayList Challenge
+        /*ArrayList<String> groceries = new ArrayList<>();
+        GroceryList(groceries);*/
+        //endregion
+
+        //region S10 - LinkedList Challenge
+        /*LinkedList<Place> list = new LinkedList<Place>();
+        addPlace(list, new Place("Sydney", 0));
+        addPlace(list, new Place("Adelaide", 1374));
+        addPlace(list, new Place("Alice Springs", 2771));
+        addPlace(list, new Place("Brisbane", 917));
+        addPlace(list, new Place("Darwin", 3972));
+        addPlace(list, new Place("Melbourne", 877));
+        addPlace(list, new Place("Perth", 3923));
+        *//*for (Place element : list) {
+            System.out.println("Next: " + element);
+        }*//*
+        //System.out.println(list);
+        auItinerary(list);*/
+        //endregion
+
+        //region S10 -  Autoboxing and unboxing Challenge
+        //Customer bob = new Customer("Bob S.", 1000.0);
+//        Bank bank = new Bank("Chase");
+//        bank.addCustomer("Jane A", 500.0);
+//        bank.addTransaction("Jane A", -10.25);
+//        bank.addTransaction("Jane A", -75.01);
+//        bank.printStatement("Jane a");
+        //endregion
+
 
     }
-}
 
-/*System.out.printf("%20s%n", getClass().getSimpleName());
-        System.out.println("-".repeat(30));*/
+
+}

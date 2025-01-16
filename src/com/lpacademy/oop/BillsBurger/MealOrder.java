@@ -15,6 +15,9 @@ public class MealOrder {
     }
 
     public MealOrder(Burger burger, Drink drink, Side sideItem) {
+        if (burger instanceof DeluxeBurger db) {
+
+        }
         this.burger = burger;
         this.drink = drink;
         this.sideItem = sideItem;
